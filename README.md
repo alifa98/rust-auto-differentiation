@@ -16,6 +16,8 @@ auto_diff = { git = "https://github.com/alifa98/rust-auto-differentiation.git" }
 
 ## Example
 
+Find the minimum of the [Rosenbrock function](https://www.wolframalpha.com/input?i=%281+-+x%29%5E2+%2B+100+%28y+-+x%5E2%29%5E2&assumption=%22ClashPrefs%22+-%3E+%7B%22Math%22%7D) using gradient descent:
+
 ```rust
 use auto_diff::Dual;
 
