@@ -39,7 +39,19 @@ impl Dual {
             derivative: -self.derivative * self.value.sin(),
         }
     }
+
+    /// Raises the `Dual` number to an integer power `n` using the power rule for differentiation.
+    pub fn powi(self, n: i32) -> Dual {
+        let value_pow_n = self.value.powi(n); // g(x)^n
+        let derivative = n as f64 * self.value.powi(n - 1) * self.derivative; // n * g(x)^(n-1) * g'(x)
+
+        Dual {
+            value: value_pow_n,
+            derivative,
+        }
+    }
 }
+
 
 // Operator overloading for Dual numbers
 impl Add for Dual {
